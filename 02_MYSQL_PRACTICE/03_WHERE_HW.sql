@@ -17,25 +17,63 @@ where
 
 -- EMPLOYEE 테이블에서 DEPT_CODE가 'D1'이면서 SALARY가 3000000 이상인 데이터를 조회하시오.
 select
-    dept_code
+    *
 from
     employee
 where
     dept_code = 'D1'
   and
-    salary >= 3000000
+    salary >= 3000000;
 
 -- EMPLOYEE 테이블에서 DEPT_CODE가 'D1'이거나 JOB_CODE가 'J4'인 데이터를 조회하시오.
+select
+    *
+from
+    employee
+where
+    dept_code = 'D1'
+OR job_code = 'J4';
 
 -- EMPLOYEE 테이블에서 SALARY가 2000000 이상 4000000 이하인 데이터를 조회하시오.
+select
+    *
+from
+    employee
+where
+    salary >= 2000000 and
+    salary <= 4000000;
 
 -- EMPLOYEE 테이블에서 EMP_NAME에 '김'이 포함된 데이터를 조회하시오.
+select
+    *
+from
+    employee
+where
+    emp_name like '%김%';
 
 -- EMPLOYEE 테이블에서 EMP_NAME이 '이'로 시작하는 데이터를 조회하시오.
+select
+    *
+from
+    employee
+where
+    emp_name like '이__';
 
 -- EMPLOYEE 테이블에서 EMAIL이 'greedy.com'으로 끝나는 데이터를 조회하시오.
+select
+    *
+from
+    employee
+where
+    email like '%greedy.com';
 
 -- EMPLOYEE 테이블에서 EMP_NAME이 '송'으로 시작하고 '기'로 끝나는 데이터를 조회하시오.
+select
+    *
+from
+    employee
+where
+    emp_name like '송_기';
 
 -- EMPLOYEE 테이블에서 PHONE이 '010'으로 시작하지 않는 데이터를 조회하시오.
 
