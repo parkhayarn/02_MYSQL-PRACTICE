@@ -76,13 +76,49 @@ where
     emp_name like '송_기';
 
 -- EMPLOYEE 테이블에서 PHONE이 '010'으로 시작하지 않는 데이터를 조회하시오.
+select
+    *
+from
+    employee
+where phone not like '010%';
 
 -- EMPLOYEE 테이블에서 DEPT_CODE가 'D1', 'D2', 'D3'인 데이터를 조회하시오.
+select
+    *
+from
+    employee
+where
+    dept_code in('d1', 'd2', 'd3');
+
 
 -- EMPLOYEE 테이블에서 JOB_CODE가 'J1', 'J2', 'J3'이 아닌 데이터를 조회하시오.
+select
+    *
+from
+    employee
+where
+    job_code not in ('j1','j2','j3');
 
 -- EMPLOYEE 테이블에서 SAL_LEVEL이 'S1', 'S2', 'S3'인 데이터를 조회하시오.
+select
+    *
+from
+    employee
+where
+    sal_level in ('s1','s2','s3');
 
 -- EMPLOYEE 테이블에서 DEPT_CODE가 NULL인 데이터를 조회하시오.
+select
+    *
+from
+    employee
+where
+    dept_code is null;
 
 -- EMPLOYEE 테이블에서 EMAIL이 NULL이 아닌 데이터를 조회하시오.
+select
+    *
+from
+    employee
+where
+    email is not null;
