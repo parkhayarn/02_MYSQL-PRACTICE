@@ -42,5 +42,13 @@ having
 
 
 -- EMPLOYEE 테이블에서 DEPT_CODE와 JOB_CODE별 총 급여와 각 DEPT_CODE별 총 급여를 ROLLUP을 사용하여 조회하시오.
-select
-    
+# select
+#     dept_code,
+#     job_code,
+#     sum(salary)
+# from
+#     employee
+
+
+
+
