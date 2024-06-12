@@ -14,7 +14,7 @@ from
     employee
 group by
     sal_level
-order by sal_level desc;
+order by sal_level;
 
 -- EMPLOYEE 테이블에서 DEPT_CODE별 직원 수를 조회하되, 직원 수가 3명 이상인 부서만 조회하시오.
 select

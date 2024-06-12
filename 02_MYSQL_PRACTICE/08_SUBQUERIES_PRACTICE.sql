@@ -127,20 +127,30 @@ where
 -- NOT EXISTS
 -- 서브쿼리 결과집합에 행이 존재하지 않으면 참, 행이 존재하면 거짓
 select
-    a.emp_name,b.max(salary)
+    a.emp_name,
+    a.salary
 from
     employee a
 where
     not exists(
         select
-            emp_name
+            salary
         from
             employee b
        where
-           a.emp_name = b.salary
+           b.salary > a.salary
     );
 
 
 -- CTE 문제
 -- EMPLOYEE 테이블에서 각 부서별 평균 급여를 계산하고,
 -- 평균 급여가 4000000 이상인 부서의 부서명과 평균 급여를 조회하시오.
+WITH DeptAvgSalary AS (
+    SELECT DEPT_CODE, AVG(SALARY) AS AvgSalary
+    FROM EMPLOYEE
+    GROUP BY DEPT_CODE
+)
+SELECT D.DEPT_TITLE, DAS.AvgSalary
+FROM DeptAvgSalary DAS
+         JOIN DEPARTMENT D ON DAS.DEPT_CODE = D.DEPT_ID
+WHERE DAS.AvgSalary >= 4000000;
