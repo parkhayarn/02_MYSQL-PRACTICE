@@ -5,7 +5,7 @@ from
     employee;
 -- EMPLOYEE 테이블에서 각 직원의 급여에서 10%를 감한 후, 이를 소수점 둘째 자리에서 반올림하여 출력하시오
 select
-    round(salary - (1 - 0.1))
+    format(salary - (SALARY * 0.1),2)
 from
     employee;
 
